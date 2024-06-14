@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Bahan Baku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Daftar Bahan Baku</h1>
+        <a href="{{ url_for('new_ingredient') }}" class="btn btn-primary">Tambah Bahan Baku Baru</a>
+        <br/><br/>
+        <ul>
+            {% for ingredient in ingredients %}
+            <li>{{ ingredient.name }} - {{ ingredient.quantity }} {{ ingredient.unit }} (ID Pemasok: {{ ingredient.supplier_id }})</li>
+            {% endfor %}
+        </ul>
+        <a href="/"><u>Back</u></a>
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

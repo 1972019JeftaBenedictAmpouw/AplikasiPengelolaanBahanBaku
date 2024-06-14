@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengelolaan Bahan Baku Kafe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Sistem Pengelolaan Bahan Baku Kafe</h1>
+        <br/><br/><br/><br/><br/><br/><br/>
+        <ul>
+            <li><a href="{{ url_for('ingredient_list') }}">Daftar Bahan Baku</a></li>
+            <li><a href="{{ url_for('supplier_list') }}">Daftar Pemasok</a></li>
+        </ul>
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>

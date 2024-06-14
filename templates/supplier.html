@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pemasok</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Pemasok</h1>
+        
+        <a href="{{ url_for('new_supplier') }}" class="btn btn-primary">Tambah Pemasok Baru</a>
+        <br/><br/>
+        <ul>
+            {% for supplier in suppliers %}
+            <li>{{ supplier.id }} - {{ supplier.name }} - {{ supplier.contact_info }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/"><u>Back</u></a>
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>
